@@ -36,17 +36,18 @@
 \begin{document}
 \begin{tikzpicture}[scale=1]
 		\begin{groupplot}[group style={group name=PRA_fig2,group size=2 by 2,horizontal sep=1cm, vertical sep=1.5cm}]
-				\nextgroupplot[xlabel = $n_h^{(2)}/n_c$, ylabel = $|P^{ss}|/(\kappa_4 S_{max})$, xmin = 0, xmax = 2, ymin =0.5, ymax = 1.15, xtick = {0,0.5,1,1.5,2}, tick scale binop = \times, width=0.55\columnwidth, xtick pos = left,  y label style={at={(axis description cs:-0.2,.5)}}, x label style={at={(axis description cs:.5,-0.15)}}, x tick label style = {xshift ={(\tick==0.5)*0.5em}}]
+				\nextgroupplot[xlabel = $n_h^{(2)}/n_c$, ylabel = $|P^{ss}|/(\kappa S_{max})$, xmin = 0, xmax = 2, ymin =0.5, ymax = 1.15, xtick = {0,0.5,1,1.5,2}, tick scale binop = \times, width=0.55\columnwidth, xtick pos = left,  y label style={at={(axis description cs:-0.2,.5)}}, x label style={at={(axis description cs:.5,-0.15)}}, x tick label style = {xshift ={(\tick==0.5)*0.5em}}]
 		\addplot[only marks, mark = o, mark options ={scale =0.75}] table{../Data/bound_ratio_gap0.05.txt};
 		\addplot[only marks, mark = x] table{../Data/bound_ratio_gap0.2.txt};
 		\addplot[dotted, thick] coordinates{(1,0)(1,1.15)};
+		\addplot[dash dot, thick] coordinates{(1.1,0)(1.1,1.15)};
 		\addplot[dashed, thick] coordinates{(0,1)(2,1)};
 		\node at (1.8,0.55) {\bf a};
 		
 				\nextgroupplot[xlabel = $p$, ymin =0.3, ymax =1.35, xmin = -0.9, xmax = 0.9, xtick = {-0.9,0,0,0.9}, tick scale binop = \times, width=0.55\columnwidth, xtick pos = left, x label style={at={(axis description cs:0.5,-0.15)}}, x tick label style = {xshift ={(\tick==0.5)*0.5em}}, ytick = {0.4,0.8,1.2}]
 		\addplot[dashed] table{../Data/smax_gap0.2.txt};
 		\addplot[only marks, red, mark options = {scale = 0.75}] table{../Data/bound_ratio_vs_p_eng.txt};
-		\addplot[only marks, blue, mark options = {scale = 0.75}]table{../Data/bound_ratio_vs_p_ref.txt};
+		\addplot[only marks, black, mark options = {scale = 0.75}]table{../Data/bound_ratio_vs_p_ref.txt};
 		\addplot[dashed, thick] coordinates{(-0.9,1)(0.9,1)};
 		\addplot[dotted, thick] coordinates{(-0.333,0.3)(-0.333,1.35)};
 		\node at (0.8,0.4) {\bf b};

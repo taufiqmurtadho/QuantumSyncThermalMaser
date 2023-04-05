@@ -1,0 +1,5 @@
+PRA_fig3-figure0.pdf: ../Data/bound_ratio_gap0.05.txt
+PRA_fig3-figure0.pdf: ../Data/bound_ratio_gap0.2.txt
+PRA_fig3-figure0.pdf: ../Data/smax_gap0.2.txt
+PRA_fig3-figure0.pdf: ../Data/bound_ratio_vs_p_eng.txt
+PRA_fig3-figure0.pdf: ../Data/bound_ratio_vs_p_ref.txt

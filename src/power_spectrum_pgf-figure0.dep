@@ -1,0 +1,4 @@
+power_spectrum_pgf-figure0.pdf: power_spectrum_eng_gap0.05.txt
+power_spectrum_pgf-figure0.pdf: power_spectrum_ref_gap0.05.txt
+power_spectrum_pgf-figure0.pdf: power_spectrum_eng_gap0.2.txt
+power_spectrum_pgf-figure0.pdf: power_spectrum_ref_gap0.2.txt

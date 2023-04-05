@@ -1,0 +1,52 @@
+\documentclass[aps,prl,superscriptaddress,reprint, floatfix]{revtex4-2}
+\usepackage{hyperref}
+\usepackage{amstext,amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{bbold}
+\usepackage[T1]{fontenc}
+%TIKZ & PGFPLOTS commands
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathmorphing,backgrounds,patterns} 
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usepackage{pgfplots} 
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{external}
+\tikzset{>=stealth}
+\tikzset{external/optimize=false}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{3d}
+\usetikzlibrary{positioning}
+\usepgfplotslibrary{external} 
+\tikzexternalize
+\usepgfplotslibrary{units}
+\usepgfplotslibrary{colorbrewer}
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{unit code/.code={\si{#1}}}
+\usepgfplotslibrary{patchplots}
+\tikzset{>=stealth}
+\usepackage{tkz-euclide}
+\usepackage{amsmath}
+\begin{document}
+\begin{tikzpicture}[scale=1]
+		\begin{groupplot}[group style={group name=PRA_power_spectrum,group size=2 by 1,horizontal sep=1cm, vertical sep=1.5cm}]
+				\nextgroupplot[xlabel = $\delta/\omega_{21}$, ylabel = $|P^{ss}|$,  xtick = {-0.5,0,0.5}, width=0.55\columnwidth, tick scale binop = \times, xtick pos = left, x label style={at={(axis description cs:.5,-0.15)}}, x tick label style = {xshift ={(\tick==0.5)*0.5em}}, xmin =-0.5, xmax = 0.5, ymin =0, ymax = 0.007]
+		\addplot[only marks, mark = o, color = red, mark size = 1pt] table{power_spectrum_eng_gap0.05.txt};
+		\addplot[only marks, mark = x, color = blue, mark size = 1pt] table{power_spectrum_ref_gap0.05.txt};
+		\addplot[dashed] coordinates{(0,0)(0,0.007)};
+		\node at (-0.4,0.006) {\bf a};
+		\nextgroupplot[xlabel = $\delta/\omega_{21}$, xtick = {-0.5,0,0.5}, width=0.55\columnwidth, tick scale binop = \times, xtick pos = left, x label style={at={(axis description cs:.5,-0.15)}}, x tick label style = {xshift ={(\tick==0.5)*0.5em}}, xmin =-0.5, xmax = 0.5, ymin =0, ymax = 0.007]
+		\addplot[only marks, mark = o, color = red, mark size = 1pt] table{power_spectrum_eng_gap0.2.txt};
+		\addplot[only marks, mark = x, color = blue, mark size = 1pt] table{power_spectrum_ref_gap0.2.txt};
+		\addplot[dashed] coordinates{(0,0)(0,0.007)};
+		\node at (-0.4,0.006) {\bf b};
+
+		\end{groupplot}
+\end{tikzpicture}
+\end{document}
